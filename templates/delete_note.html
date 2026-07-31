@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delete Note</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:500px;
+    background:white;
+    border-radius:12px;
+    padding:35px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+h1{
+    margin-bottom:15px;
+}
+
+p{
+    color:#666;
+    margin-bottom:30px;
+}
+
+.note-title{
+    font-weight:bold;
+    color:#333;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+button,
+a{
+    padding:12px 22px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    text-decoration:none;
+}
+
+.delete{
+    background:#ef4444;
+    color:white;
+}
+
+.cancel{
+    background:#e5e7eb;
+    color:black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Delete Note</h1>
+
+    <p>
+        Are you sure you want to delete 
+        <span class="note-title">"{{ note.title }}"</span>?
+    </p>
+
+    <div class="buttons">
+
+        <a href="{% url 'dashboard' %}" class="cancel">
+            Cancel
+        </a>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button class="delete" type="submit">
+                Delete
+            </button>
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

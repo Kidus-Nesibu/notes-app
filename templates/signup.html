@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sign Up</title>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+body{
+    background:#f1f3f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+
+.card{
+
+    background:white;
+
+    width:380px;
+
+    padding:35px;
+
+    border-radius:14px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+.logo{
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#1a73e8;
+
+    margin-bottom:25px;
+
+}
+
+
+h1{
+
+    text-align:center;
+
+    font-size:24px;
+
+    margin-bottom:25px;
+
+    color:#202124;
+
+}
+
+
+
+label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-weight:bold;
+
+    color:#333;
+
+}
+
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    margin-bottom:15px;
+
+}
+
+
+input:focus{
+
+    outline:none;
+
+    border-color:#1a73e8;
+
+}
+
+
+
+.errors{
+
+    color:#d93025;
+
+    font-size:13px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.password-help{
+
+    background:#f8f9fa;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    margin-top:-5px;
+
+    margin-bottom:15px;
+
+    font-size:13px;
+
+    color:#666;
+
+    display:none;
+
+}
+
+
+.password-help ul{
+
+    margin-left:18px;
+
+    margin-top:5px;
+
+}
+
+
+
+button{
+
+    width:100%;
+
+    padding:13px;
+
+    background:#1a73e8;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+
+button:hover{
+
+    background:#1557b0;
+
+}
+
+
+
+.login{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:#666;
+
+}
+
+
+.login a{
+
+    color:#1a73e8;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<div class="logo">
+    Notes
+</div>
+
+
+<h1>
+    Create Account
+</h1>
+
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+
+
+{% if form.username.errors %}
+
+<div class="errors">
+
+{{ form.username.errors }}
+
+</div>
+
+{% endif %}
+
+
+<label>
+Username
+</label>
+
+{{ form.username }}
+
+
+
+
+
+{% if form.password1.errors %}
+
+<div class="errors">
+
+{{ form.password1.errors }}
+
+</div>
+
+{% endif %}
+
+
+<label>
+Password
+</label>
+
+
+{{ form.password1 }}
+
+
+
+<div class="password-help" id="password-help">
+
+Password must:
+
+<ul>
+
+<li>Contain at least 8 characters</li>
+
+<li>Not be commonly used</li>
+
+<li>Not be entirely numeric</li>
+
+</ul>
+
+</div>
+
+
+
+
+
+{% if form.password2.errors %}
+
+<div class="errors">
+
+{{ form.password2.errors }}
+
+</div>
+
+{% endif %}
+
+
+
+<label>
+Confirm Password
+</label>
+
+
+{{ form.password2 }}
+
+
+
+
+<button type="submit">
+
+Sign Up
+
+</button>
+
+
+
+</form>
+
+
+
+<div class="login">
+
+Already have an account?
+
+<a href="{% url 'login' %}">
+Login
+</a>
+
+</div>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+const passwordField = document.getElementById("id_password1");
+
+const helpBox = document.getElementById("password-help");
+
+
+
+passwordField.addEventListener("focus", function(){
+
+    helpBox.style.display = "block";
+
+});
+
+
+
+passwordField.addEventListener("blur", function(){
+
+    helpBox.style.display = "none";
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
