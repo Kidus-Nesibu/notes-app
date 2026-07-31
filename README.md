@@ -21,7 +21,7 @@ The goal of this project was to build a complete web application with user authe
 <!-- Add screenshot here -->
 <!-- Screenshot needed: The first page users see with the NoteFlow logo, description, and Login/Sign Up buttons -->
 
-![Landing Page](screenshots/landing-page.png)
+![Landing Page](screenshots/landing.png)
 
 
 ### User Dashboard
@@ -37,7 +37,7 @@ The goal of this project was to build a complete web application with user authe
 <!-- Add screenshot here -->
 <!-- Screenshot needed: The note creation page with title and content fields filled -->
 
-![Create Note](screenshots/create-note.png)
+![Create Note](screenshots/note.png)
 
 
 ### Viewing a Note
@@ -45,7 +45,7 @@ The goal of this project was to build a complete web application with user authe
 <!-- Add screenshot here -->
 <!-- Screenshot needed: The page displaying a single note -->
 
-![View Note](screenshots/view-note.png)
+![View Note](screenshots/view.png)
 
 
 ---
