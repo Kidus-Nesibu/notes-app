@@ -231,39 +231,3 @@ Through this project, I practiced:
 * User permissions
 * Deployment workflow
 * Writing documentation
-
----
-
-# Author
-
-Built by **Kidus**
-
-GitHub:
-[Insert GitHub Profile Link]
-
-```
-
-A small recommendation: create a folder in your repository called:
-
-```
-
-screenshots/
-
-```
-
-and put your images there:
-
-```
-
-screenshots/
-├── landing-page.png
-├── dashboard.png
-├── create-note.png
-└── view-note.png
-
-```
-
-Then your README will display the images automatically on GitHub.
-
-For the demo video, I would record after adding those 3-4 polished demo notes so the screenshots and video tell the same story.
-```
