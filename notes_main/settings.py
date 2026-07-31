@@ -27,6 +27,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "notes-app-y04o.onrender.com",
+    "localhost",
+    "127.0.0.1",
     ]
 
 
