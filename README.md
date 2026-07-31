@@ -1,12 +1,3 @@
-Good idea. For GitHub, screenshots should appear where they help the reader understand the app. I would put:
-
-1. **Demo video near the top** (people see the project quickly)
-2. **Screenshots after features** (show what the app actually looks like)
-3. **Architecture/project structure later** (for technical readers)
-
-Here is a clean README with screenshot placeholders:
-
-```markdown
 # NoteFlow ✎
 
 A simple and elegant note-taking application that allows users to create, manage, and organize their personal notes in a clean workspace.
