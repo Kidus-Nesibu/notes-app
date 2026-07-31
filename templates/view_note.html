@@ -14,102 +14,286 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Inter, Arial, Helvetica, sans-serif;
 }
 
 
 body{
-    background:#f4f4f4;
+
+    background:#f8fafc;
+
     min-height:100vh;
+
     display:flex;
     justify-content:center;
-    align-items:center;
+
+    padding:40px 20px;
+
 }
 
+
+
+/* PAGE */
 
 .container{
 
-    width:600px;
-    background:white;
-    padding:35px;
-    border-radius:12px;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    width:800px;
+
+    max-width:100%;
 
 }
+
+
+
+/* HEADER */
+
+
+.top-bar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+.logo{
+
+    width:42px;
+
+    height:42px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+}
+
+
+
+.brand span{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+
+
+/* DOCUMENT */
+
+
+.document{
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.08);
+
+}
+
+
+
+.date{
+
+    color:#9ca3af;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+
+}
+
 
 
 h1{
 
-    margin-bottom:20px;
-    color:#222;
+    font-size:42px;
 
-}
+    letter-spacing:-1px;
 
+    color:#111827;
 
-.note-content{
-
-    background:#fafafa;
-    border:1px solid #ddd;
-    border-radius:10px;
-    padding:20px;
-    min-height:150px;
-    color:#555;
-    line-height:1.6;
     margin-bottom:30px;
 
 }
 
 
-.buttons{
 
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+.divider{
+
+    height:1px;
+
+    background:#e5e7eb;
+
+    margin-bottom:30px;
 
 }
+
+
+
+.note-content{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#374151;
+
+    white-space:pre-line;
+
+    min-height:200px;
+
+}
+
+
+
+/* BUTTONS */
+
+
+.buttons{
+
+    margin-top:40px;
+
+    display:flex;
+
+    gap:15px;
+
+}
+
 
 
 a{
 
     text-decoration:none;
-    padding:12px 22px;
-    border-radius:8px;
-    font-size:15px;
+
 }
+
+
+
+button{
+
+    padding:12px 25px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+
+
+button:hover{
+
+    transform:translateY(-2px);
+
+}
+
 
 
 .edit{
 
     background:#facc15;
-    color:black;
+
+    color:#111;
 
 }
+
 
 
 .delete{
 
     background:#ef4444;
+
     color:white;
 
 }
+
 
 
 .home{
 
     background:#2563eb;
+
     color:white;
 
 }
 
 
-a:hover{
 
-    opacity:.85;
+
+@media(max-width:700px){
+
+    .document{
+
+        padding:30px;
+
+    }
+
+
+    h1{
+
+        font-size:32px;
+
+    }
+
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+
+    button{
+
+        width:100%;
+
+    }
 
 }
 
 
 </style>
+
 
 </head>
 
@@ -120,7 +304,44 @@ a:hover{
 <div class="container">
 
 
-<h1>{{ note.title }}</h1>
+<div class="top-bar">
+
+
+<div class="brand">
+
+<div class="logo">
+    ✎
+</div>
+
+
+<span>
+    NoteFlow
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="document">
+
+
+<div class="date">
+    Your personal note
+</div>
+
+
+<h1>
+    {{ note.title }}
+</h1>
+
+
+<div class="divider"></div>
+
 
 
 <div class="note-content">
@@ -131,24 +352,41 @@ a:hover{
 
 
 
+
 <div class="buttons">
 
 
-<a class="edit" href="{% url 'edit_note' note.pk %}">
-    Edit
+<a href="{% url 'edit_note' note.pk %}">
+
+<button class="edit">
+    Edit Note
+</button>
+
 </a>
 
 
 
-<a class="delete" href="{% url 'delete_note' note.pk %}">
+<a href="{% url 'delete_note' note.pk %}">
+
+<button class="delete">
     Delete
+</button>
+
 </a>
 
 
 
-<a class="home" href="{% url 'home' %}">
-    Back Home
+<a href="{% url 'home' %}">
+
+<button class="home">
+    Back to Notes
+</button>
+
 </a>
+
+
+
+</div>
 
 
 </div>
