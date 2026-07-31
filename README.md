@@ -4,16 +4,6 @@ A simple and elegant note-taking application that allows users to create, manage
 
 The goal of this project was to build a complete web application with user authentication, CRUD functionality, and deployment.
 
----
-
-## Demo Video
-
-🎥 Watch the application demo:
-
-[Insert Demo Video Link Here]
-
----
-
 ## Screenshots
 
 ### Landing Page
